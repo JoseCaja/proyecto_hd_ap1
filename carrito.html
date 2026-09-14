@@ -1,1 +1,48 @@
-#Pendiente
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <h2 class="logo">MODA Y ESTILO UNICA</h2>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="tienda.html">Tienda</a>
+        <a href="acercade.html">Acerca de</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="carrito.html">Carrito (<span id="contador">0</span>)</a>
+        <a href="login.html">Iniciar sesion</a>
+    </nav>
+</header>
+
+<section id="carrito">
+
+    <h2>Carrito de compra</h2>
+
+    <ul id="lista"></ul>
+
+    <h3 id="total">0</h3>
+    
+    <p class="promo-descuento">
+        ¡Compra más y ahorra más! Si tu pedido supera los <strong>S/ 100.00</strong>, obtén un
+        <strong>10% de descuento</strong> en tu compra.
+    </p>
+
+    <button onclick="finalizarCompra()">Finalizar compra</button>
+
+
+
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
