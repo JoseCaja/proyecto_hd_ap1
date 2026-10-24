@@ -2,13 +2,23 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 let usuarios = [];
 
 // Simulación de Stock
-let stock = JSON.parse(localStorage.getItem("stock")) || {
+const stockInicial = {
     Blusa: 15,
     Vestido: 14,
     Sueter: 13,
     Polo: 16,
     Top: 15,
-    Chaqueta: 2
+    Chaqueta: 2,
+    "Zapatillas blancas": 12,
+    "Sandalias beige": 10,
+    "Jeans rectos": 15,
+    "Jeans wide leg": 12
+};
+
+// Añadir nuevos productos sin restablecer las existencias ya guardadas.
+let stock = {
+    ...stockInicial,
+    ...(JSON.parse(localStorage.getItem("stock")) || {})
 };
 
 function guardarStock() {
@@ -35,6 +45,11 @@ function agregar(nombre, precio, imagen) {
     guardarStock();
     actualizarContador();
     mostrarStock();
+
+    const mensaje = document.getElementById("mensaje-tienda");
+    if (mensaje) {
+        mensaje.textContent = `${nombre} añadido al carrito. Productos en el carrito: ${carrito.length}.`;
+    }
 }
 
 function actualizarContador() {
@@ -42,9 +57,16 @@ function actualizarContador() {
     if (contador) contador.textContent = carrito.length;
 }
 
+function calcularTotalesCarrito() {
+    const subtotal = carrito.reduce((acc, item) => acc + item.precio, 0);
+    const descuento = subtotal > 100 ? subtotal * 0.15 : 0;
+    const totalPagar = subtotal - descuento;
+
+    return { subtotal, descuento, totalPagar };
+}
+
 function mostrarCarrito() {
     let lista = document.getElementById("lista");
-    let total = 0;
 
     if (!lista) return;
 
@@ -68,20 +90,10 @@ function mostrarCarrito() {
         `;
 
         lista.appendChild(li);
-        total += item.precio;
     });
 
-    //descuento
-
-    let subtotal = total;
+    const { subtotal, descuento, totalPagar } = calcularTotalesCarrito();
     let igv = subtotal / 1.18 * 0.18;
-    let descuento = 0;
-
-    if (subtotal > 100) {
-        descuento = subtotal * 0.15;
-    }
-
-    let totalPagar = subtotal - descuento;
 
     let totalElemento = document.getElementById("total");
 
@@ -111,13 +123,9 @@ function eliminar(index) {
 }
 
 function finalizarCompra() {
-    let total = carrito.reduce((acc, item) => acc + item.precio, 0);
+    const { totalPagar } = calcularTotalesCarrito();
 
-    if (total > 100) {
-        total *= 0.9;
-    }
-
-    alert("Compra realizada. Total: $ " + total.toFixed(2));
+    alert("Compra realizada. Total: S/ " + totalPagar.toFixed(2));
 
     carrito = [];
     guardar();
@@ -129,9 +137,15 @@ actualizarContador();
 
 function mostrarStock() {
     Object.keys(stock).forEach(producto => {
-        let elemento = document.getElementById(`stock-${producto}`);
+        let elemento = document.getElementById(`stock-${producto.replace(/ /g, "-")}`);
         if (elemento) {
             elemento.textContent = stock[producto];
+        }
+
+        const boton = document.getElementById(`agregar-${producto.replace(/ /g, "-")}`);
+        if (boton) {
+            boton.disabled = stock[producto] <= 0;
+            boton.textContent = boton.disabled ? "Agotado" : "Añadir al carrito";
         }
     });
 }
@@ -201,3 +215,19 @@ function mostrarUsuarios(){
             </tr>`;
     });
 }
+
+// Mostrar u ocultar la descripción sin salir del catálogo.
+document.querySelectorAll("[data-detalle]").forEach(boton => {
+    boton.addEventListener("click", () => {
+        const detalle = document.getElementById(boton.getAttribute("aria-controls"));
+        if (!detalle) return;
+
+        const expandido = boton.getAttribute("aria-expanded") === "true";
+        detalle.hidden = expandido;
+        boton.setAttribute("aria-expanded", String(!expandido));
+        boton.textContent = expandido ? "Ver detalles" : "Ocultar detalles";
+        boton.setAttribute("aria-label", boton.getAttribute("aria-label")
+            .replace(expandido ? "Ocultar detalles" : "Ver detalles",
+                     expandido ? "Ver detalles" : "Ocultar detalles"));
+    });
+});
