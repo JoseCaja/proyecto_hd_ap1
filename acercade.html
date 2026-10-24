@@ -1,1 +1,111 @@
-#Pendiente
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR RESPONSIVE CON BOOTSTRAP -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+
+        <!-- LOGO -->
+        <a class="navbar-brand fw-bold" href="index.html">
+            MODA Y ESTILO ÚNICA
+        </a>
+
+        <!-- BOTÓN PARA MÓVILES -->
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuPrincipal"
+            aria-controls="menuPrincipal"
+            aria-expanded="false"
+            aria-label="Abrir o cerrar menú">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- ENLACES -->
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="tienda.html">Tienda</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="acercade.html">Acerca de</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contacto.html">Contacto</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="carrito.html">
+                        Carrito (<span id="contador">0</span>)
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Iniciar sesión</a>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<section class="acerca">
+
+    <div class="texto">
+        <h1>Moda femenina que resalta tu estilo</h1>
+
+        <p>
+            Somos una tienda dedicada a ofrecer ropa femenina moderna,
+            cómoda y accesible para mujeres que desean sentirse seguras.
+        </p>
+
+        <p>
+            Seleccionamos cuidadosamente cada prenda para brindarte
+            diseños actuales y versátiles.
+        </p>
+    </div>
+
+    <img src="assets/acerca.jpg">
+
+</section>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div>
+            <p class="footer-brand">MODA Y ESTILO ÚNICA</p>
+            <p>Moda femenina para expresar tu estilo.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Navegación del pie de página">
+            <a href="index.html">Inicio</a>
+            <a href="tienda.html">Tienda</a>
+            <a href="acercade.html">Acerca de</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </div>
+    <p class="footer-bottom">&copy; 2026 Moda y Estilo Única. Todos los derechos reservados.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

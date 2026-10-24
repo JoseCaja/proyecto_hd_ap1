@@ -5,31 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Se mantiene Bootstrap que agregó el equipo -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<header>
-    <h2 class="logo">MODA Y ESTILO UNICA</h2>
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="tienda.html">Tienda</a>
-        <a href="acercade.html">Acerca de</a>
-        <a href="contacto.html">Contacto</a>
-        <a href="carrito.html">Carrito (<span id="contador">0</span>)</a>
-        <a href="login.html">Iniciar sesion</a>
-    </nav>
-</header>
+<!-- NAVBAR (Mantenemos el nuevo de Bootstrap) -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">MODA Y ESTILO UNICA</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
+        <li class="nav-item"><a class="nav-link" href="acercade.html">Acerca de</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link active" href="carrito.html">Carrito (<span id="contador">0</span>)</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">Iniciar sesion</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-<section id="carrito">
+<section id="carrito" class="container mt-5">
 
     <h2>Carrito de compra</h2>
 
-    <!-- MEJORA: Se añade clase "lista-carrito" para facilitar estilos futuros -->
     <ul id="lista" class="lista-carrito"></ul>
 
-    <!-- MEJORA: Contenedor para dar formato al total -->
     <div class="resumen-carrito">
         <h3>Total a pagar: S/ <span id="total">0.00</span></h3>
     </div>
@@ -39,13 +46,13 @@
         <strong>10% de descuento</strong> en tu compra.
     </p>
 
-    <!-- MEJORA: Se añade clase al botón para estilos -->
-    <button class="btn-finalizar" onclick="finalizarCompra()">Finalizar compra</button>
+    <button class="btn btn-primary btn-finalizar" onclick="finalizarCompra()">Finalizar compra</button>
 
 </section>
 
 <script src="script.js"></script>
 
+<!-- MEJORA: Script temporal para que el carrito funcione sin tocar script.js aún -->
 <script>
     let carrito = [
         { id: 1, nombre: "Blusa Elegante", precio: 45.00, cantidad: 1, imagen: "assets/blusa1.jpg" },
@@ -82,7 +89,7 @@
                 </div>
                 <div class="acciones-producto">
                     <input type="number" min="1" value="${producto.cantidad}" onchange="cambiarCantidad(${index}, this.value)">
-                    <button onclick="eliminarProducto(${index})">❌</button>
+                    <button onclick="eliminarProducto(${index})" class="btn btn-danger btn-sm">❌</button>
                 </div>
             `;
             lista.appendChild(li);
@@ -91,7 +98,6 @@
             totalArticulos += producto.cantidad;
         });
 
-        // Lógica del descuento
         let totalFinal = sumaTotal;
         if (sumaTotal > 100) {
             totalFinal = sumaTotal - (sumaTotal * 0.10); 
