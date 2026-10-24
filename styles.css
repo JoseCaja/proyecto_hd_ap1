@@ -10,6 +10,9 @@ body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #E5E3DC;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* NAVBAR */
@@ -195,6 +198,71 @@ button:hover {
     border-radius: 10px;
 }
 
+/* UBICACION GOOGLE MAPS */
+.ubicacion {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 0 60px 60px;
+}
+
+.ubicacion-info {
+    flex: 1;
+}
+
+.ubicacion-info h2 {
+    text-align: left;
+    margin: 0 0 20px;
+    color: #d08c72;
+}
+
+.ubicacion-info p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.horario {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.horario li {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.horario li span {
+    font-weight: 600;
+}
+
+.btn-mapa {
+    display: inline-block;
+    background-color: #d08c72;
+    padding: 12px 20px;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-mapa:hover {
+    background-color: #b8765f;
+}
+
+.ubicacion-mapa {
+    width: 50%;
+}
+
+.ubicacion-mapa iframe {
+    width: 100%;
+    height: 380px;
+    border: none;
+    border-radius: 10px;
+}
+
 /* CONTACTO */
 .contacto {
     display: flex;
@@ -293,12 +361,71 @@ textarea {
     color: #000;
 }
 
+/* FOOTER */
+.site-footer {
+    margin-top: auto;
+    padding: 30px 60px 16px;
+    background-color: #333;
+    color: #fff;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-brand {
+    color: #d08c72;
+    font-weight: bold;
+}
+
+.footer-content p {
+    margin: 8px 0 0;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    color: #d08c72;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 24px auto 0;
+    padding-top: 12px;
+    border-top: 1px solid #666;
+    text-align: center;
+    font-size: 14px;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
 
     header {
         flex-direction: column;
         gap: 10px;
+    }
+
+    .site-footer {
+        padding: 24px 20px 16px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .hero h1 {
@@ -319,9 +446,25 @@ textarea {
         width: 100%;
     }
 
+    .ubicacion {
+        flex-direction: column;
+        padding: 0 20px 20px;
+    }
+
+    .ubicacion-info h2 {
+        text-align: center;
+    }
+
+    .ubicacion-mapa {
+        width: 100%;
+    }
+
+    .ubicacion-mapa iframe {
+        height: 300px;
+    }
+
     .contacto {
         flex-direction: column;
         padding: 20px;
     }
 }
-

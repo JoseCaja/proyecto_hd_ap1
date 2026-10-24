@@ -1,17 +1,78 @@
 # proyecto_hd_ap1
 Herramienta de desarrollo - Avance de proyecto 1
 
----
+# Moda y Estilo Única 👗
 
-##  Mejoras Implementadas
+## 📌 Descripción
 
-A continuación se detallan las mejoras añadidas al proyecto:
+**Moda y Estilo Única** es un proyecto académico desarrollado para el curso **Herramientas de Desarrollo**.
 
-###  Carrito de Compras (`carrito.html`)
-*   **Descuento Automático:** Se implementó la lógica para aplicar un 10% de descuento si el subtotal de la compra supera los S/ 100.00.
-*   **Totales Dinámicos:** El precio total se recalcula en tiempo real si el usuario modifica la cantidad de un producto.
-*   **Eliminación de Ítems:** Se agregó un botón para quitar productos del carrito individualmente.
-*   **Diseño Limpio:** Se aplicaron estilos para que la lista de productos se vea ordenada y moderna.
+El proyecto consiste en el desarrollo de una plataforma web orientada a la **venta de prendas de vestir**, con el objetivo de establecer una primera versión funcional de una tienda virtual.
 
-###  Interfaz de Usuario (UI)
-*   **Botón Flotante de WhatsApp:** Se añadió un acceso directo para contactar con atención al cliente desde la página (esquina inferior derecha).
+En este primer avance se busca principalmente demostrar la aplicación de un flujo de trabajo colaborativo mediante **Git y GitHub**, permitiendo que los integrantes del equipo trabajen de manera organizada, utilizando commits, ramas e integración de cambios.
+
+## 🎯 Objetivo del proyecto
+
+Desarrollar progresivamente una plataforma web de comercio electrónico para una tienda de ropa, aplicando buenas prácticas de desarrollo y control de versiones durante el trabajo colaborativo.
+
+### Objetivos específicos
+
+* Crear una estructura web organizada y funcional.
+* Implementar las principales páginas de la tienda.
+* Incorporar una vista para la visualización de productos.
+* Implementar una estructura inicial para el carrito de compras y el inicio de sesión.
+* Utilizar Git y GitHub para gestionar los cambios realizados por los integrantes.
+* Aplicar ramas de trabajo e integración mediante merge y Pull Requests.
+
+## 🛍️ Funcionalidades actuales
+
+La primera versión del proyecto incluye:
+
+* 🏠 **Página de inicio**
+* 🛒 **Tienda / catálogo de productos**
+* 👕 **Vista individual de producto**
+* 🛍️ **Carrito de compras**
+* 🔐 **Página de inicio de sesión**
+* ℹ️ **Página Acerca de**
+* 📍 **Mapa de ubicación en Google Maps**
+* 📞 **Página de Contacto**
+* 🎨 **Diseño mediante CSS**
+* ⚙️ **Interactividad mediante JavaScript**
+
+## 🧱 Estructura del proyecto
+
+```text
+proyecto_hd_ap1/
+│
+├── .vscode/
+│   └── Configuración del entorno de desarrollo
+│
+├── assets/
+│   └── Imágenes y recursos utilizados por el proyecto
+│
+├── index.html
+│   └── Página principal
+│
+├── tienda.html
+│   └── Catálogo de productos
+│
+├── producto-blusa.html
+│   └── Vista detallada del producto
+│
+├── carrito.html
+│   └── Carrito de compras
+│
+├── login.html
+│   └── Inicio de sesión
+│
+├── acercade.html
+│   └── Información sobre la tienda
+│
+├── contacto.html
+│   └── Información de contacto
+│
+├── styles.css
+│   └── Estilos y diseño visual
+│
+└── script.js
+    └── Lógica e interactividad del proyecto
