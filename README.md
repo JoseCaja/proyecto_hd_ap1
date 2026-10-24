@@ -1,3 +1,6 @@
+# proyecto_hd_ap1
+Herramienta de desarrollo - Avance de proyecto 1
+
 # Moda y Estilo Única 👗
 
 ## 📌 Descripción
@@ -31,6 +34,7 @@ La primera versión del proyecto incluye:
 * 🛍️ **Carrito de compras**
 * 🔐 **Página de inicio de sesión**
 * ℹ️ **Página Acerca de**
+* 📍 **Mapa de ubicación en Google Maps**
 * 📞 **Página de Contacto**
 * 🎨 **Diseño mediante CSS**
 * ⚙️ **Interactividad mediante JavaScript**
@@ -72,78 +76,3 @@ proyecto_hd_ap1/
 │
 └── script.js
     └── Lógica e interactividad del proyecto
-```
-
-## 🛠️ Tecnologías utilizadas
-
-| Tecnología             | Uso                                   |
-| ---------------------- | ------------------------------------- |
-| **HTML5**              | Estructura y contenido de las páginas |
-| **CSS3**               | Diseño y estilos visuales             |
-| **JavaScript**         | Lógica e interactividad               |
-| **Git**                | Control de versiones                  |
-| **GitHub**             | Repositorio remoto y colaboración     |
-| **Visual Studio Code** | Entorno de desarrollo                 |
-
-## 🌿 Control de versiones
-
-El proyecto utiliza **Git y GitHub** como herramientas principales para el control de versiones.
-
-El equipo trabaja mediante:
-
-* Commits para registrar cambios.
-* Ramas para desarrollar funcionalidades de manera independiente.
-* Merge para integrar los cambios.
-* Pull Requests para facilitar la revisión e integración del código.
-* Historial de commits para mantener la trazabilidad del proyecto.
-
-## 👥 Trabajo colaborativo
-
-El proyecto es desarrollado de manera colaborativa por los integrantes del equipo.
-
-El uso de Git permite distribuir las tareas y trabajar simultáneamente en diferentes partes del proyecto, reduciendo el riesgo de pérdida de información y facilitando la integración de los cambios.
-
-## 🚀 Próximas mejoras
-
-Para las siguientes etapas del proyecto se plantea ampliar progresivamente la funcionalidad de la plataforma, incorporando características como:
-
-* Mayor cantidad de productos.
-* Mejoras en el carrito de compras.
-* Gestión de inventario.
-* Funcionalidades relacionadas con las compras.
-* Mejoras en la autenticación de usuarios.
-* Optimización de la experiencia de usuario.
-* Nuevas funcionalidades según los requerimientos de los siguientes avances.
-
-## 📚 Contexto académico
-
-**Curso:** Herramientas de Desarrollo
-**Proyecto:** Implementación de un Sistema Web para una empresa de ventas Retail usando Git y GitHub
-**Avance:** Proyecto 1 – Primer avance
-**Año:** 2026
-
----
-
-### 👨‍💻 Equipo de desarrollo
-
-* César Jair Carhuacusma Flores
-* Bryam Alexander Saldaña Guevara
-* Edwin Emir Siguas Astora
-* Kelly Idrogo Chipana
-* Jose Luis Caja Mallcco
-
----
-
-✨ Mejoras implementadas - Historial de cambios
-
-Como parte de la evolución del proyecto, se incorporaron mejoras en la estructura y presentación de la tienda virtual:
-
-## Rama: feature/footer-global
-* Autor: Edwin Siguas
-* Fecha: 23-10-2026
-* Footer global: incorporación de un pie de página en las diferentes páginas del sitio web para mantener una estructura visual uniforme.
-
-## Rama: feature/banner-responsive-bootstrap
-* Autor: Jose Caja
-* Fecha: 23-10-2026
-* Footer global: Mejoras banner Navbar, responsivo
