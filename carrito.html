@@ -5,106 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Se mantiene Bootstrap que agregó el equipo -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- NAVBAR RESPONSIVE CON BOOTSTRAP -->
+<!-- NAVBAR (Mantenemos el nuevo de Bootstrap) -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-
-        <!-- LOGO -->
-        <a class="navbar-brand fw-bold" href="index.html">
-            MODA Y ESTILO ÚNICA
-        </a>
-
-        <!-- BOTÓN PARA MÓVILES -->
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#menuPrincipal"
-            aria-controls="menuPrincipal"
-            aria-expanded="false"
-            aria-label="Abrir o cerrar menú">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- ENLACES -->
-        <div class="collapse navbar-collapse" id="menuPrincipal">
-            <ul class="navbar-nav ms-auto align-items-lg-center">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Inicio</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="tienda.html">Tienda</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="acercade.html">Acerca de</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="contacto.html">Contacto</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="carrito.html">
-                        Carrito (<span id="contador">0</span>)
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">Iniciar sesión</a>
-                </li>
-
-            </ul>
-        </div>
-
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">MODA Y ESTILO UNICA</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
+        <li class="nav-item"><a class="nav-link" href="acercade.html">Acerca de</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link active" href="carrito.html">Carrito (<span id="contador">0</span>)</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">Iniciar sesion</a></li>
+      </ul>
     </div>
+  </div>
 </nav>
 
-<section id="carrito">
+<section id="carrito" class="container mt-5">
 
     <h2>Carrito de compra</h2>
 
-    <ul id="lista"></ul>
+    <ul id="lista" class="lista-carrito"></ul>
 
-    <h3 id="total">0</h3>
+    <div class="resumen-carrito">
+        <h3>Total a pagar: S/ <span id="total">0.00</span></h3>
+    </div>
     
     <p class="promo-descuento">
         ¡Compra más y ahorra más! Si tu pedido supera los <strong>S/ 100.00</strong>, obtén un
-        <strong>15% de descuento</strong> en tu compra.
+        <strong>10% de descuento</strong> en tu compra.
     </p>
 
-    <button onclick="finalizarCompra()">Finalizar compra</button>
-
-
-
+    <button class="btn btn-primary btn-finalizar" onclick="finalizarCompra()">Finalizar compra</button>
 
 </section>
 
-<footer class="site-footer">
-    <div class="footer-content">
-        <div>
-            <p class="footer-brand">MODA Y ESTILO ÚNICA</p>
-            <p>Moda femenina para expresar tu estilo.</p>
-        </div>
-        <nav class="footer-nav" aria-label="Navegación del pie de página">
-            <a href="index.html">Inicio</a>
-            <a href="tienda.html">Tienda</a>
-            <a href="acercade.html">Acerca de</a>
-            <a href="contacto.html">Contacto</a>
-        </nav>
-    </div>
-    <p class="footer-bottom">&copy; 2026 Moda y Estilo Única. Todos los derechos reservados.</p>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
+
+<!-- MEJORA: Script temporal para que el carrito funcione sin tocar script.js aún -->
+<script>
+    let carrito = [
+        { id: 1, nombre: "Blusa Elegante", precio: 45.00, cantidad: 1, imagen: "assets/blusa1.jpg" },
+        { id: 2, nombre: "Pantalón Jean", precio: 70.00, cantidad: 1, imagen: "assets/jean1.jpg" }
+    ];
+
+    function renderizarCarrito() {
+        const lista = document.getElementById("lista");
+        const totalElemento = document.getElementById("total");
+        const contador = document.getElementById("contador");
+        
+        if (!lista || !totalElemento) return; 
+
+        lista.innerHTML = "";
+        let sumaTotal = 0;
+        let totalArticulos = 0;
+
+        if (carrito.length === 0) {
+            lista.innerHTML = "<p>Tu carrito está vacío. ¡Ve a la tienda!</p>";
+            totalElemento.innerText = "0.00";
+            contador.innerText = "0";
+            return;
+        }
+
+        carrito.forEach((producto, index) => {
+            const li = document.createElement("li");
+            li.className = "item-carrito";
+            
+            li.innerHTML = `
+                <img src="${producto.imagen}" alt="${producto.nombre}" width="50">
+                <div class="info-producto">
+                    <h4>${producto.nombre}</h4>
+                    <p>S/ ${producto.precio.toFixed(2)}</p>
+                </div>
+                <div class="acciones-producto">
+                    <input type="number" min="1" value="${producto.cantidad}" onchange="cambiarCantidad(${index}, this.value)">
+                    <button onclick="eliminarProducto(${index})" class="btn btn-danger btn-sm">❌</button>
+                </div>
+            `;
+            lista.appendChild(li);
+            
+            sumaTotal += producto.precio * producto.cantidad;
+            totalArticulos += producto.cantidad;
+        });
+
+        let totalFinal = sumaTotal;
+        if (sumaTotal > 100) {
+            totalFinal = sumaTotal - (sumaTotal * 0.10); 
+        }
+
+        totalElemento.innerText = totalFinal.toFixed(2);
+        contador.innerText = totalArticulos;
+    }
+
+    function cambiarCantidad(index, nuevaCantidad) {
+        if (nuevaCantidad < 1) nuevaCantidad = 1; 
+        carrito[index].cantidad = parseInt(nuevaCantidad);
+        renderizarCarrito(); 
+    }
+
+    function eliminarProducto(index) {
+        carrito.splice(index, 1); 
+        renderizarCarrito();
+    }
+
+    function finalizarCompra() {
+        if (carrito.length === 0) {
+            alert("Tu carrito está vacío.");
+            return;
+        }
+        let total = document.getElementById("total").innerText;
+        alert(`¡Gracias por tu compra! Total a pagar: S/ ${total}`);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        renderizarCarrito();
+    });
+</script>
 
 </body>
 </html>
