@@ -76,3 +76,28 @@ proyecto_hd_ap1/
 │
 └── script.js
     └── Lógica e interactividad del proyecto
+
+
+✨ Mejoras implementadas - Historial de cambios
+
+Como parte de la evolución del proyecto, se incorporaron mejoras en la estructura y presentación de la tienda virtual:
+
+## Rama: feature/footer-global
+* Autor: Edwin Siguas
+* Fecha: 23-10-2026
+* Footer global: incorporación de un pie de página en las diferentes páginas del sitio web para mantener una estructura visual uniforme.
+
+## Rama: feature/banner-responsive-bootstrap
+* Autor: Jose Caja
+* Fecha: 23-10-2026
+* Footer global: Mejoras banner Navbar, responsivo
+
+## Rama: feature/mapa-ubicacion-tienda
+* Autor: César Carhuacusma
+* Fecha: 23-10-2026
+* Mapa de ubicación: incorporación de un mapa de Google Maps incrustado en la página "Acerca de", junto con la dirección y el horario de atención de la tienda.
+
+## Rama: feature/catalogo-calzado-jeans
+* Autor: Kelly Idrogo
+* Fecha: 23-10-2026
+* Tienda: ampliacióºn de catalogo, se agrega calzados y jeans

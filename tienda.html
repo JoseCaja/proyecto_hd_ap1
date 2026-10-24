@@ -28,111 +28,213 @@
 <!-- NAVBAR RESPONSIVE CON BOOTSTRAP -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-
-        <!-- LOGO -->
-        <a class="navbar-brand fw-bold" href="index.html">
-            MODA Y ESTILO ÚNICA
-        </a>
-
-        <!-- BOTÓN PARA MÓVILES -->
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#menuPrincipal"
-            aria-controls="menuPrincipal"
-            aria-expanded="false"
-            aria-label="Abrir o cerrar menú">
+        <a class="navbar-brand fw-bold" href="index.html">MODA Y ESTILO ÚNICA</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir o cerrar menú">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <!-- ENLACES -->
         <div class="collapse navbar-collapse" id="menuPrincipal">
             <ul class="navbar-nav ms-auto align-items-lg-center">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Inicio</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="tienda.html">Tienda</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="acercade.html">Acerca de</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="contacto.html">Contacto</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="carrito.html">
-                        Carrito (<span id="contador">0</span>)
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">Iniciar sesión</a>
-                </li>
-
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link active" href="tienda.html" aria-current="page">Tienda</a></li>
+                <li class="nav-item"><a class="nav-link" href="acercade.html">Acerca de</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                <li class="nav-item"><a class="nav-link" href="carrito.html">Carrito (<span id="contador">0</span>)</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Iniciar sesión</a></li>
             </ul>
         </div>
-
     </div>
 </nav>
 
-<div class="productos">
+<main class="tienda">
+    <div class="tienda-cabecera">
+        <h1>Nuestra tienda</h1>
+        <p>Encuentra tu próxima prenda favorita.</p>
+        <p id="mensaje-tienda" class="tienda-mensaje" role="status" aria-live="polite" aria-atomic="true"></p>
+    </div>
+    
+    <div class="productos tienda-productos">
+        <!-- Productos de ropa -->
+        <article class="producto" aria-labelledby="titulo-Blusa">
+            <img src="assets/blusa.jpg" alt="Blusa" loading="lazy">
+            <div class="info">
+                <h2 id="titulo-Blusa">Blusa</h2>
+                <p class="producto-precio">S/ 25.00</p>
+                <p>Stock: <span id="stock-Blusa"></span></p>
+                <div class="producto-acciones">
+                    <button type="button" class="btn btn-dark" id="agregar-Blusa" aria-label="Añadir blusa al carrito" onclick="agregar('Blusa',25,'assets/blusa.jpg')">Añadir al carrito</button>
+                    <button type="button" class="btn btn-outline-dark" data-detalle aria-label="Ver detalles de blusa" aria-expanded="false" aria-controls="detalle-Blusa">Ver detalles</button>
+                </div>
+                <div class="producto-descripcion" id="detalle-Blusa" hidden>
+                    <h3>Descripción</h3>
+                    <p>Combina esta blusa con un pantalón o una falda para crear un conjunto a tu estilo.</p>
+                </div>
+            </div>
+        </article>
 
-    <div class="producto">
-        <img src="assets/blusa.jpg" alt="Blusa">
-        <div class="info">
-            <h3>BLUSAS</h3>
-            <p>S/ 25.00</p>
-        </div>
+        <article class="producto" aria-labelledby="titulo-Vestido">
+            <img src="assets/vestido.jpg" alt="Vestido" loading="lazy">
+            <div class="info">
+                <h2 id="titulo-Vestido">Vestido</h2>
+                <p class="producto-precio">S/ 30.00</p>
+                <p>Stock: <span id="stock-Vestido"></span></p>
+                <div class="producto-acciones">
+                    <button type="button" class="btn btn-dark" id="agregar-Vestido" aria-label="Añadir vestido al carrito" onclick="agregar('Vestido',30,'assets/vestido.jpg')">Añadir al carrito</button>
+                    <button type="button" class="btn btn-outline-dark" data-detalle aria-label="Ver detalles de vestido" aria-expanded="false" aria-controls="detalle-Vestido">Ver detalles</button>
+                </div>
+                <div class="producto-descripcion" id="detalle-Vestido" hidden>
+                    <h3>Descripción</h3>
+                    <p>Una prenda para armar tu conjunto en un solo paso. Completa el look con tus accesorios favoritos.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="producto" aria-labelledby="titulo-Sueter">
+            <img src="assets/sueter.jpg" alt="Suéter" loading="lazy">
+            <div class="info">
+                <h2 id="titulo-Sueter">Suéter</h2>
+                <p class="producto-precio">S/ 45.00</p>
+                <p>Stock: <span id="stock-Sueter"></span></p>
+                <div class="producto-acciones">
+                    <button type="button" class="btn btn-dark" id="agregar-Sueter" aria-label="Añadir suéter al carrito" onclick="agregar('Sueter',45,'assets/sueter.jpg')">Añadir al carrito</button>
+                    <button type="button" class="btn btn-outline-dark" data-detalle aria-label="Ver detalles de suéter" aria-expanded="false" aria-controls="detalle-Sueter">Ver detalles</button>
+                </div>
+                <div class="producto-descripcion" id="detalle-Sueter" hidden>
+                    <h3>Descripción</h3>
+                    <p>Combina este suéter con un polo o una blusa para llevar un conjunto en capas.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="producto" aria-labelledby="titulo-Polo">
+            <img src="assets/polo.jpg" alt="Polo" loading="lazy">
+            <div class="info">
+                <h2 id="titulo-Polo">Polo</h2>
+                <p class="producto-precio">S/ 35.00</p>
+                <p>Stock: <span id="stock-Polo"></span></p>
+                <div class="producto-acciones">
+                    <button type="button" class="btn btn-dark" id="agregar-Polo" aria-label="Añadir polo al carrito" onclick="agregar('Polo',35,'assets/polo.jpg')">Añadir al carrito</button>
+                    <button type="button" class="btn btn-outline-dark" data-detalle aria-label="Ver detalles de polo" aria-expanded="false" aria-controls="detalle-Polo">Ver detalles</button>
+                </div>
+                <div class="producto-descripcion" id="detalle-Polo" hidden>
+                    <h3>Descripción</h3>
+                    <p>Combina este polo con jeans o una falda para un conjunto casual.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="producto" aria-labelledby="titulo-Top">
+            <img src="assets/top.jpg" alt="Top" loading="lazy">
+            <div class="info">
+                <h2 id="titulo-Top">Top</h2>
+                <p class="producto-precio">S/ 30.00</p>
+                <p>Stock: <span id="stock-Top"></span></p>
+                <div class="producto-acciones">
+                    <button type="button" class="btn btn-dark" id="agregar-Top" aria-label="Añadir top al carrito" onclick="agregar('Top',30,'assets/top.jpg')">Añadir al carrito</button>
+                    <button type="button" class="btn btn-outline-dark" data-detalle aria-label="Ver detalles de top" aria-expanded="false" aria-controls="detalle-Top">Ver detalles</button>
+                </div>
+                <div class="producto-descripcion" id="detalle-Top" hidden>
+                    <h3>Descripción</h3>
+                    <p>Lleva este top con un pantalón o combínalo con una chaqueta para completar tu conjunto.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="producto" aria-labelledby="titulo-Chaqueta">
+            <img src="assets/Chaqueta.jpg" alt="Chaqueta" loading="lazy">
+            <div class="info">
+                <h2 id="titulo-Chaqueta">Chaqueta</h2>
+                <p class="producto-precio">S/ 40.00</p>
+                <p>Stock: <span id="stock-Chaqueta"></span></p>
+                <div class="producto-acciones">
+                    <button type="button" class="btn btn-dark" id="agregar-Chaqueta" aria-label="Añadir chaqueta al carrito" onclick="agregar('Chaqueta',40,'assets/Chaqueta.jpg')">Añadir al carrito</button>
+                    <button type="button" class="btn btn-outline-dark" data-detalle aria-label="Ver detalles de chaqueta" aria-expanded="false" aria-controls="detalle-Chaqueta">Ver detalles</button>
+                </div>
+                <div class="producto-descripcion" id="detalle-Chaqueta" hidden>
+                    <h3>Descripción</h3>
+                    <p>Añade esta chaqueta sobre un top, un polo o un vestido como capa final de tu conjunto.</p>
+                </div>
+            </div>
+        </article>
     </div>
 
-    <div class="producto">
-        <img src="assets/vestido.jpg" alt="Vestido">
-        <div class="info">
-            <h3>VESTIDO</h3>
-            <p>S/ 30.00</p>
-        </div>
-    </div>
+    <section class="tienda-categoria" aria-labelledby="categoria-calzado">
+        <h2 id="categoria-calzado">Calzado</h2>
+        <div class="productos tienda-productos">
+            <article class="producto" aria-labelledby="titulo-zapatillas-blancas">
+                <img src="assets/zapatillas-blancas.png" alt="Zapatillas blancas" loading="lazy">
+                <div class="info">
+                    <h3 id="titulo-zapatillas-blancas">Zapatillas blancas</h3>
+                    <p class="producto-precio">S/ 85.00</p>
+                    <p>Stock: <span id="stock-Zapatillas-blancas"></span></p>
+                    <div class="producto-acciones">
+                        <button type="button" class="btn btn-dark" id="agregar-Zapatillas-blancas" aria-label="Añadir zapatillas blancas al carrito" onclick="agregar('Zapatillas blancas',85,'assets/zapatillas-blancas.png')">Añadir al carrito</button>
+                        <button type="button" class="btn btn-outline-dark" data-detalle aria-label="Ver detalles de zapatillas blancas" aria-expanded="false" aria-controls="detalle-zapatillas-blancas">Ver detalles</button>
+                    </div>
+                    <div class="producto-descripcion" id="detalle-zapatillas-blancas" hidden>
+                        <h4>Descripción</h4>
+                        <p>Zapatillas blancas de caña baja con pasadores y suela blanca. Combínalas con jeans o con un vestido para un conjunto casual.</p>
+                    </div>
+                </div>
+            </article>
 
-    <div class="producto">
-        <img src="assets/sueter.jpg" alt="Sueter">
-        <div class="info">
-            <h3>SUETER</h3>
-            <p>S/ 45.00</p>
+            <article class="producto" aria-labelledby="titulo-sandalias-beige">
+                <img src="assets/sandalias-beige.png" alt="Sandalias beige" loading="lazy">
+                <div class="info">
+                    <h3 id="titulo-sandalias-beige">Sandalias beige</h3>
+                    <p class="producto-precio">S/ 55.00</p>
+                    <p>Stock: <span id="stock-Sandalias-beige"></span></p>
+                    <div class="producto-acciones">
+                        <button type="button" class="btn btn-dark" id="agregar-Sandalias-beige" aria-label="Añadir sandalias beige al carrito" onclick="agregar('Sandalias beige',55,'assets/sandalias-beige.png')">Añadir al carrito</button>
+                        <button type="button" class="btn btn-outline-dark" data-detalle aria-label="Ver detalles de sandalias beige" aria-expanded="false" aria-controls="detalle-sandalias-beige">Ver detalles</button>
+                    </div>
+                    <div class="producto-descripcion" id="detalle-sandalias-beige" hidden>
+                        <h4>Descripción</h4>
+                        <p>Sandalias beige de suela plana, tiras anchas y hebilla al tobillo. Combínalas con faldas, vestidos o jeans.</p>
+                    </div>
+                </div>
+            </article>
         </div>
-    </div>
+    </section>
 
-    <div class="producto">
-        <img src="assets/polo.jpg" alt="Polo">
-        <div class="info">
-            <h3>POLO</h3>
-            <p>S/ 35.00</p>
+    <section class="tienda-categoria" aria-labelledby="categoria-jeans">
+        <h2 id="categoria-jeans">Jeans</h2>
+        <div class="productos tienda-productos">
+            <article class="producto" aria-labelledby="titulo-jeans-rectos">
+                <img src="assets/jeans-rectos.png" alt="Jeans rectos" loading="lazy">
+                <div class="info">
+                    <h3 id="titulo-jeans-rectos">Jeans rectos</h3>
+                    <p class="producto-precio">S/ 65.00</p>
+                    <p>Stock: <span id="stock-Jeans-rectos"></span></p>
+                    <div class="producto-acciones">
+                        <button type="button" class="btn btn-dark" id="agregar-Jeans-rectos" aria-label="Añadir jeans rectos al carrito" onclick="agregar('Jeans rectos',65,'assets/jeans-rectos.png')">Añadir al carrito</button>
+                        <button type="button" class="btn btn-outline-dark" data-detalle aria-label="Ver detalles de jeans rectos" aria-expanded="false" aria-controls="detalle-jeans-rectos">Ver detalles</button>
+                    </div>
+                    <div class="producto-descripcion" id="detalle-jeans-rectos" hidden>
+                        <h4>Descripción</h4>
+                        <p>Jeans de corte recto en azul clásico, con bolsillos delanteros. Combínalos con una blusa, un polo o tus zapatillas favoritas.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="producto" aria-labelledby="titulo-jeans-wide-leg">
+                <img src="assets/jeans-wide-leg.png" alt="Jeans wide leg" loading="lazy">
+                <div class="info">
+                    <h3 id="titulo-jeans-wide-leg">Jeans wide leg</h3>
+                    <p class="producto-precio">S/ 75.00</p>
+                    <p>Stock: <span id="stock-Jeans-wide-leg"></span></p>
+                    <div class="producto-acciones">
+                        <button type="button" class="btn btn-dark" id="agregar-Jeans-wide-leg" aria-label="Añadir jeans wide leg al carrito" onclick="agregar('Jeans wide leg',75,'assets/jeans-wide-leg.png')">Añadir al carrito</button>
+                        <button type="button" class="btn btn-outline-dark" data-detalle aria-label="Ver detalles de jeans wide leg" aria-expanded="false" aria-controls="detalle-jeans-wide-leg">Ver detalles</button>
+                    </div>
+                    <div class="producto-descripcion" id="detalle-jeans-wide-leg" hidden>
+                        <h4>Descripción</h4>
+                        <p>Jeans azul claro de tiro alto y pierna ancha. Completa tu conjunto con un top o una blusa y el calzado que prefieras.</p>
+                    </div>
+                </div>
+            </article>
         </div>
-    </div>
-
-    <div class="producto">
-        <img src="assets/top.jpg" alt="Top">
-        <div class="info">
-            <h3>TOP</h3>
-            <p>S/ 30.00</p>
-        </div>
-    </div>
-
-    <div class="producto">
-        <img src="assets/Chaqueta.jpg" alt="Chaqueta">
-        <div class="info">
-            <h3>CHAQUETA</h3>
-            <p>S/ 40.00</p>
-        </div>
-    </div>
-
-</div>
+    </section>
+</main>
 
 <footer class="site-footer">
     <div class="footer-content">
