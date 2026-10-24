@@ -4,9 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Producto - Moda y Estilo Única</title>
+    
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
+<!-- NAVBAR RESPONSIVE CON BOOTSTRAP -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+
+        <!-- LOGO -->
+        <a class="navbar-brand fw-bold" href="index.html">
+            MODA Y ESTILO ÚNICA
+        </a>
+
+        <!-- BOTÓN PARA MÓVILES -->
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuPrincipal"
+            aria-controls="menuPrincipal"
+            aria-expanded="false"
+            aria-label="Abrir o cerrar menú">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- ENLACES -->
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="tienda.html">Tienda</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="acercade.html">Acerca de</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contacto.html">Contacto</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="carrito.html">
+                        Carrito (<span id="contador">0</span>)
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Iniciar sesión</a>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<!-- CONTENIDO DEL PRODUCTO -->
+<main class="container mt-5 mb-5">
+    <div class="row align-items-center">
+        <!-- Imagen del producto -->
+        <div class="col-md-6 text-center">
+            <img src="assets/blusa.jpg" alt="Blusa" class="img-fluid rounded shadow-sm" style="max-height: 500px;">
+        </div>
+        
+        <!-- Detalles del producto -->
+        <div class="col-md-6 mt-4 mt-md-0">
+            <h1 class="fw-bold">Blusa Elegante</h1>
+            <h3 class="text-muted mb-4">S/ 25.00</h3>
+            
+            <p>Descubre nuestra nueva blusa, confeccionada con materiales de alta calidad para brindarte comodidad y estilo en cualquier ocasión.</p>
+            
+            <div class="d-grid gap-2 col-6 mt-4">
+                <button class="btn btn-dark btn-lg" onclick="agregar('Blusa',25,'assets/blusa.jpg')">Añadir al carrito</button>
+            </div>
+        </div>
+    </div>
+</main>
 
 <footer class="site-footer">
     <div class="footer-content">
@@ -24,7 +105,13 @@
     <p class="footer-bottom">&copy; 2026 Moda y Estilo Única. Todos los derechos reservados.</p>
 </footer>
 
+<!-- Botón Flotante de WhatsApp -->
+<a href="https://wa.me/51999999999?text=Hola,%20necesito%20ayuda" class="btn-whatsapp" target="_blank" rel="noopener noreferrer" title="Contactar por WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>

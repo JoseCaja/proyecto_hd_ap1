@@ -10,61 +10,23 @@
 
 <body>
 
-
 <!-- NAVBAR RESPONSIVE CON BOOTSTRAP -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-
-        <!-- LOGO -->
-        <a class="navbar-brand fw-bold" href="index.html">
-            MODA Y ESTILO ÚNICA
-        </a>
-
-        <!-- BOTÓN PARA MÓVILES -->
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#menuPrincipal"
-            aria-controls="menuPrincipal"
-            aria-expanded="false"
-            aria-label="Abrir o cerrar menú">
+        <a class="navbar-brand fw-bold" href="index.html">MODA Y ESTILO ÚNICA</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir o cerrar menú">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <!-- ENLACES -->
         <div class="collapse navbar-collapse" id="menuPrincipal">
             <ul class="navbar-nav ms-auto align-items-lg-center">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Inicio</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link active" href="tienda.html" aria-current="page">Tienda</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="acercade.html">Acerca de</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="contacto.html">Contacto</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="carrito.html">
-                        Carrito (<span id="contador">0</span>)
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">Iniciar sesión</a>
-                </li>
-
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link active" href="tienda.html" aria-current="page">Tienda</a></li>
+                <li class="nav-item"><a class="nav-link" href="acercade.html">Acerca de</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                <li class="nav-item"><a class="nav-link" href="carrito.html">Carrito (<span id="contador">0</span>)</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Iniciar sesión</a></li>
             </ul>
         </div>
-
     </div>
 </nav>
 
@@ -82,12 +44,8 @@
                 <p class="producto-precio">S/ 25.00</p>
                 <p>Stock: <span id="stock-Blusa"></span></p>
                 <div class="producto-acciones">
-                    <button type="button" class="btn btn-dark" id="agregar-Blusa"
-                            aria-label="Añadir blusa al carrito"
-                            onclick="agregar('Blusa',25,'assets/blusa.jpg')">Añadir al carrito</button>
-                    <button type="button" class="btn btn-outline-dark" data-detalle
-                            aria-label="Ver detalles de blusa"
-                            aria-expanded="false" aria-controls="detalle-Blusa">Ver detalles</button>
+                    <button type="button" class="btn btn-dark" id="agregar-Blusa" aria-label="Añadir blusa al carrito" onclick="agregar('Blusa',25,'assets/blusa.jpg')">Añadir al carrito</button>
+                    <button type="button" class="btn btn-outline-dark" data-detalle aria-label="Ver detalles de blusa" aria-expanded="false" aria-controls="detalle-Blusa">Ver detalles</button>
                 </div>
                 <div class="producto-descripcion" id="detalle-Blusa" hidden>
                     <h3>Descripción</h3>
@@ -103,12 +61,8 @@
                 <p class="producto-precio">S/ 30.00</p>
                 <p>Stock: <span id="stock-Vestido"></span></p>
                 <div class="producto-acciones">
-                    <button type="button" class="btn btn-dark" id="agregar-Vestido"
-                            aria-label="Añadir vestido al carrito"
-                            onclick="agregar('Vestido',30,'assets/vestido.jpg')">Añadir al carrito</button>
-                    <button type="button" class="btn btn-outline-dark" data-detalle
-                            aria-label="Ver detalles de vestido"
-                            aria-expanded="false" aria-controls="detalle-Vestido">Ver detalles</button>
+                    <button type="button" class="btn btn-dark" id="agregar-Vestido" aria-label="Añadir vestido al carrito" onclick="agregar('Vestido',30,'assets/vestido.jpg')">Añadir al carrito</button>
+                    <button type="button" class="btn btn-outline-dark" data-detalle aria-label="Ver detalles de vestido" aria-expanded="false" aria-controls="detalle-Vestido">Ver detalles</button>
                 </div>
                 <div class="producto-descripcion" id="detalle-Vestido" hidden>
                     <h3>Descripción</h3>
@@ -124,12 +78,8 @@
                 <p class="producto-precio">S/ 45.00</p>
                 <p>Stock: <span id="stock-Sueter"></span></p>
                 <div class="producto-acciones">
-                    <button type="button" class="btn btn-dark" id="agregar-Sueter"
-                            aria-label="Añadir suéter al carrito"
-                            onclick="agregar('Sueter',45,'assets/sueter.jpg')">Añadir al carrito</button>
-                    <button type="button" class="btn btn-outline-dark" data-detalle
-                            aria-label="Ver detalles de suéter"
-                            aria-expanded="false" aria-controls="detalle-Sueter">Ver detalles</button>
+                    <button type="button" class="btn btn-dark" id="agregar-Sueter" aria-label="Añadir suéter al carrito" onclick="agregar('Sueter',45,'assets/sueter.jpg')">Añadir al carrito</button>
+                    <button type="button" class="btn btn-outline-dark" data-detalle aria-label="Ver detalles de suéter" aria-expanded="false" aria-controls="detalle-Sueter">Ver detalles</button>
                 </div>
                 <div class="producto-descripcion" id="detalle-Sueter" hidden>
                     <h3>Descripción</h3>
@@ -145,12 +95,8 @@
                 <p class="producto-precio">S/ 35.00</p>
                 <p>Stock: <span id="stock-Polo"></span></p>
                 <div class="producto-acciones">
-                    <button type="button" class="btn btn-dark" id="agregar-Polo"
-                            aria-label="Añadir polo al carrito"
-                            onclick="agregar('Polo',35,'assets/polo.jpg')">Añadir al carrito</button>
-                    <button type="button" class="btn btn-outline-dark" data-detalle
-                            aria-label="Ver detalles de polo"
-                            aria-expanded="false" aria-controls="detalle-Polo">Ver detalles</button>
+                    <button type="button" class="btn btn-dark" id="agregar-Polo" aria-label="Añadir polo al carrito" onclick="agregar('Polo',35,'assets/polo.jpg')">Añadir al carrito</button>
+                    <button type="button" class="btn btn-outline-dark" data-detalle aria-label="Ver detalles de polo" aria-expanded="false" aria-controls="detalle-Polo">Ver detalles</button>
                 </div>
                 <div class="producto-descripcion" id="detalle-Polo" hidden>
                     <h3>Descripción</h3>
@@ -166,12 +112,8 @@
                 <p class="producto-precio">S/ 30.00</p>
                 <p>Stock: <span id="stock-Top"></span></p>
                 <div class="producto-acciones">
-                    <button type="button" class="btn btn-dark" id="agregar-Top"
-                            aria-label="Añadir top al carrito"
-                            onclick="agregar('Top',30,'assets/top.jpg')">Añadir al carrito</button>
-                    <button type="button" class="btn btn-outline-dark" data-detalle
-                            aria-label="Ver detalles de top"
-                            aria-expanded="false" aria-controls="detalle-Top">Ver detalles</button>
+                    <button type="button" class="btn btn-dark" id="agregar-Top" aria-label="Añadir top al carrito" onclick="agregar('Top',30,'assets/top.jpg')">Añadir al carrito</button>
+                    <button type="button" class="btn btn-outline-dark" data-detalle aria-label="Ver detalles de top" aria-expanded="false" aria-controls="detalle-Top">Ver detalles</button>
                 </div>
                 <div class="producto-descripcion" id="detalle-Top" hidden>
                     <h3>Descripción</h3>
@@ -187,12 +129,8 @@
                 <p class="producto-precio">S/ 40.00</p>
                 <p>Stock: <span id="stock-Chaqueta"></span></p>
                 <div class="producto-acciones">
-                    <button type="button" class="btn btn-dark" id="agregar-Chaqueta"
-                            aria-label="Añadir chaqueta al carrito"
-                            onclick="agregar('Chaqueta',40,'assets/Chaqueta.jpg')">Añadir al carrito</button>
-                    <button type="button" class="btn btn-outline-dark" data-detalle
-                            aria-label="Ver detalles de chaqueta"
-                            aria-expanded="false" aria-controls="detalle-Chaqueta">Ver detalles</button>
+                    <button type="button" class="btn btn-dark" id="agregar-Chaqueta" aria-label="Añadir chaqueta al carrito" onclick="agregar('Chaqueta',40,'assets/Chaqueta.jpg')">Añadir al carrito</button>
+                    <button type="button" class="btn btn-outline-dark" data-detalle aria-label="Ver detalles de chaqueta" aria-expanded="false" aria-controls="detalle-Chaqueta">Ver detalles</button>
                 </div>
                 <div class="producto-descripcion" id="detalle-Chaqueta" hidden>
                     <h3>Descripción</h3>
@@ -212,12 +150,8 @@
                     <p class="producto-precio">S/ 85.00</p>
                     <p>Stock: <span id="stock-Zapatillas-blancas"></span></p>
                     <div class="producto-acciones">
-                        <button type="button" class="btn btn-dark" id="agregar-Zapatillas-blancas"
-                                aria-label="Añadir zapatillas blancas al carrito"
-                                onclick="agregar('Zapatillas blancas',85,'assets/zapatillas-blancas.png')">Añadir al carrito</button>
-                        <button type="button" class="btn btn-outline-dark" data-detalle
-                                aria-label="Ver detalles de zapatillas blancas"
-                                aria-expanded="false" aria-controls="detalle-zapatillas-blancas">Ver detalles</button>
+                        <button type="button" class="btn btn-dark" id="agregar-Zapatillas-blancas" aria-label="Añadir zapatillas blancas al carrito" onclick="agregar('Zapatillas blancas',85,'assets/zapatillas-blancas.png')">Añadir al carrito</button>
+                        <button type="button" class="btn btn-outline-dark" data-detalle aria-label="Ver detalles de zapatillas blancas" aria-expanded="false" aria-controls="detalle-zapatillas-blancas">Ver detalles</button>
                     </div>
                     <div class="producto-descripcion" id="detalle-zapatillas-blancas" hidden>
                         <h4>Descripción</h4>
@@ -233,12 +167,8 @@
                     <p class="producto-precio">S/ 55.00</p>
                     <p>Stock: <span id="stock-Sandalias-beige"></span></p>
                     <div class="producto-acciones">
-                        <button type="button" class="btn btn-dark" id="agregar-Sandalias-beige"
-                                aria-label="Añadir sandalias beige al carrito"
-                                onclick="agregar('Sandalias beige',55,'assets/sandalias-beige.png')">Añadir al carrito</button>
-                        <button type="button" class="btn btn-outline-dark" data-detalle
-                                aria-label="Ver detalles de sandalias beige"
-                                aria-expanded="false" aria-controls="detalle-sandalias-beige">Ver detalles</button>
+                        <button type="button" class="btn btn-dark" id="agregar-Sandalias-beige" aria-label="Añadir sandalias beige al carrito" onclick="agregar('Sandalias beige',55,'assets/sandalias-beige.png')">Añadir al carrito</button>
+                        <button type="button" class="btn btn-outline-dark" data-detalle aria-label="Ver detalles de sandalias beige" aria-expanded="false" aria-controls="detalle-sandalias-beige">Ver detalles</button>
                     </div>
                     <div class="producto-descripcion" id="detalle-sandalias-beige" hidden>
                         <h4>Descripción</h4>
@@ -254,12 +184,8 @@
                     <p class="producto-precio">S/ 95.00</p>
                     <p>Stock: <span id="stock-Botines-negros"></span></p>
                     <div class="producto-acciones">
-                        <button type="button" class="btn btn-dark" id="agregar-Botines-negros"
-                                aria-label="Añadir botines negros al carrito"
-                                onclick="agregar('Botines negros',95,'assets/botines-negros.png')">Añadir al carrito</button>
-                        <button type="button" class="btn btn-outline-dark" data-detalle
-                                aria-label="Ver detalles de botines negros"
-                                aria-expanded="false" aria-controls="detalle-botines-negros">Ver detalles</button>
+                        <button type="button" class="btn btn-dark" id="agregar-Botines-negros" aria-label="Añadir botines negros al carrito" onclick="agregar('Botines negros',95,'assets/botines-negros.png')">Añadir al carrito</button>
+                        <button type="button" class="btn btn-outline-dark" data-detalle aria-label="Ver detalles de botines negros" aria-expanded="false" aria-controls="detalle-botines-negros">Ver detalles</button>
                     </div>
                     <div class="producto-descripcion" id="detalle-botines-negros" hidden>
                         <h4>Descripción</h4>
@@ -280,12 +206,8 @@
                     <p class="producto-precio">S/ 65.00</p>
                     <p>Stock: <span id="stock-Jeans-rectos"></span></p>
                     <div class="producto-acciones">
-                        <button type="button" class="btn btn-dark" id="agregar-Jeans-rectos"
-                                aria-label="Añadir jeans rectos al carrito"
-                                onclick="agregar('Jeans rectos',65,'assets/jeans-rectos.png')">Añadir al carrito</button>
-                        <button type="button" class="btn btn-outline-dark" data-detalle
-                                aria-label="Ver detalles de jeans rectos"
-                                aria-expanded="false" aria-controls="detalle-jeans-rectos">Ver detalles</button>
+                        <button type="button" class="btn btn-dark" id="agregar-Jeans-rectos" aria-label="Añadir jeans rectos al carrito" onclick="agregar('Jeans rectos',65,'assets/jeans-rectos.png')">Añadir al carrito</button>
+                        <button type="button" class="btn btn-outline-dark" data-detalle aria-label="Ver detalles de jeans rectos" aria-expanded="false" aria-controls="detalle-jeans-rectos">Ver detalles</button>
                     </div>
                     <div class="producto-descripcion" id="detalle-jeans-rectos" hidden>
                         <h4>Descripción</h4>
@@ -301,12 +223,8 @@
                     <p class="producto-precio">S/ 75.00</p>
                     <p>Stock: <span id="stock-Jeans-wide-leg"></span></p>
                     <div class="producto-acciones">
-                        <button type="button" class="btn btn-dark" id="agregar-Jeans-wide-leg"
-                                aria-label="Añadir jeans wide leg al carrito"
-                                onclick="agregar('Jeans wide leg',75,'assets/jeans-wide-leg.png')">Añadir al carrito</button>
-                        <button type="button" class="btn btn-outline-dark" data-detalle
-                                aria-label="Ver detalles de jeans wide leg"
-                                aria-expanded="false" aria-controls="detalle-jeans-wide-leg">Ver detalles</button>
+                        <button type="button" class="btn btn-dark" id="agregar-Jeans-wide-leg" aria-label="Añadir jeans wide leg al carrito" onclick="agregar('Jeans wide leg',75,'assets/jeans-wide-leg.png')">Añadir al carrito</button>
+                        <button type="button" class="btn btn-outline-dark" data-detalle aria-label="Ver detalles de jeans wide leg" aria-expanded="false" aria-controls="detalle-jeans-wide-leg">Ver detalles</button>
                     </div>
                     <div class="producto-descripcion" id="detalle-jeans-wide-leg" hidden>
                         <h4>Descripción</h4>
@@ -322,12 +240,8 @@
                     <p class="producto-precio">S/ 70.00</p>
                     <p>Stock: <span id="stock-Jeans-skinny"></span></p>
                     <div class="producto-acciones">
-                        <button type="button" class="btn btn-dark" id="agregar-Jeans-skinny"
-                                aria-label="Añadir jeans skinny al carrito"
-                                onclick="agregar('Jeans skinny',70,'assets/jeans-skinny.png')">Añadir al carrito</button>
-                        <button type="button" class="btn btn-outline-dark" data-detalle
-                                aria-label="Ver detalles de jeans skinny"
-                                aria-expanded="false" aria-controls="detalle-jeans-skinny">Ver detalles</button>
+                        <button type="button" class="btn btn-dark" id="agregar-Jeans-skinny" aria-label="Añadir jeans skinny al carrito" onclick="agregar('Jeans skinny',70,'assets/jeans-skinny.png')">Añadir al carrito</button>
+                        <button type="button" class="btn btn-outline-dark" data-detalle aria-label="Ver detalles de jeans skinny" aria-expanded="false" aria-controls="detalle-jeans-skinny">Ver detalles</button>
                     </div>
                     <div class="producto-descripcion" id="detalle-jeans-skinny" hidden>
                         <h4>Descripción</h4>
@@ -354,6 +268,11 @@
     </div>
     <p class="footer-bottom">&copy; 2026 Moda y Estilo Única. Todos los derechos reservados.</p>
 </footer>
+
+<!-- Botón Flotante de WhatsApp -->
+<a href="https://wa.me/51999999999?text=Hola,%20necesito%20ayuda" class="btn-whatsapp" target="_blank" rel="noopener noreferrer" title="Contactar por WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
