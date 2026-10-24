@@ -26,23 +26,105 @@
 
     <h2>Carrito de compra</h2>
 
-    <ul id="lista"></ul>
+    <!-- MEJORA: Se añade clase "lista-carrito" para facilitar estilos futuros -->
+    <ul id="lista" class="lista-carrito"></ul>
 
-    <h3 id="total">0</h3>
+    <!-- MEJORA: Contenedor para dar formato al total -->
+    <div class="resumen-carrito">
+        <h3>Total a pagar: S/ <span id="total">0.00</span></h3>
+    </div>
     
     <p class="promo-descuento">
         ¡Compra más y ahorra más! Si tu pedido supera los <strong>S/ 100.00</strong>, obtén un
         <strong>10% de descuento</strong> en tu compra.
     </p>
 
-    <button onclick="finalizarCompra()">Finalizar compra</button>
-
-
-
+    <!-- MEJORA: Se añade clase al botón para estilos -->
+    <button class="btn-finalizar" onclick="finalizarCompra()">Finalizar compra</button>
 
 </section>
 
 <script src="script.js"></script>
+
+<script>
+    let carrito = [
+        { id: 1, nombre: "Blusa Elegante", precio: 45.00, cantidad: 1, imagen: "assets/blusa1.jpg" },
+        { id: 2, nombre: "Pantalón Jean", precio: 70.00, cantidad: 1, imagen: "assets/jean1.jpg" }
+    ];
+
+    function renderizarCarrito() {
+        const lista = document.getElementById("lista");
+        const totalElemento = document.getElementById("total");
+        const contador = document.getElementById("contador");
+        
+        if (!lista || !totalElemento) return; 
+
+        lista.innerHTML = "";
+        let sumaTotal = 0;
+        let totalArticulos = 0;
+
+        if (carrito.length === 0) {
+            lista.innerHTML = "<p>Tu carrito está vacío. ¡Ve a la tienda!</p>";
+            totalElemento.innerText = "0.00";
+            contador.innerText = "0";
+            return;
+        }
+
+        carrito.forEach((producto, index) => {
+            const li = document.createElement("li");
+            li.className = "item-carrito";
+            
+            li.innerHTML = `
+                <img src="${producto.imagen}" alt="${producto.nombre}" width="50">
+                <div class="info-producto">
+                    <h4>${producto.nombre}</h4>
+                    <p>S/ ${producto.precio.toFixed(2)}</p>
+                </div>
+                <div class="acciones-producto">
+                    <input type="number" min="1" value="${producto.cantidad}" onchange="cambiarCantidad(${index}, this.value)">
+                    <button onclick="eliminarProducto(${index})">❌</button>
+                </div>
+            `;
+            lista.appendChild(li);
+            
+            sumaTotal += producto.precio * producto.cantidad;
+            totalArticulos += producto.cantidad;
+        });
+
+        // Lógica del descuento
+        let totalFinal = sumaTotal;
+        if (sumaTotal > 100) {
+            totalFinal = sumaTotal - (sumaTotal * 0.10); 
+        }
+
+        totalElemento.innerText = totalFinal.toFixed(2);
+        contador.innerText = totalArticulos;
+    }
+
+    function cambiarCantidad(index, nuevaCantidad) {
+        if (nuevaCantidad < 1) nuevaCantidad = 1; 
+        carrito[index].cantidad = parseInt(nuevaCantidad);
+        renderizarCarrito(); 
+    }
+
+    function eliminarProducto(index) {
+        carrito.splice(index, 1); 
+        renderizarCarrito();
+    }
+
+    function finalizarCompra() {
+        if (carrito.length === 0) {
+            alert("Tu carrito está vacío.");
+            return;
+        }
+        let total = document.getElementById("total").innerText;
+        alert(`¡Gracias por tu compra! Total a pagar: S/ ${total}`);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        renderizarCarrito();
+    });
+</script>
 
 </body>
 </html>
